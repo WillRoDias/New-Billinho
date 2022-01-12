@@ -2,7 +2,6 @@ module Api
     module V1
         class TicketController < ApplicationController 
             before_action :set_ticket, only: [:show, :destroy, :update]  
-            #Listar todos os alunos
             def index 
                 @ticket_list = Ticket.all
                 render json: @ticket_list
@@ -10,7 +9,6 @@ module Api
             def show
                 render json: @ticket_each
             end
-            #Cadastrar um novo aluno
             def create
                 @ticket_create = Ticket.new(ticket_params)
                 if @ticket_create.save
@@ -19,7 +17,6 @@ module Api
                     render json: @ticket_create.errors, status: 422
                 end
             end
-            #Altera uma informação no cadastro
             def update
                 if @ticket_each.update(ticket_params)
                     render json: @ticket_each

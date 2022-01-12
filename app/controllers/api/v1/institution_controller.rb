@@ -2,7 +2,6 @@ module Api
     module V1
         class InstitutionController < ApplicationController 
             before_action :set_institution, only: [:show, :destroy, :update]  
-            #Listar todos os alunos
             def index 
                 @institution_ticket = Institution.all
                 render json: @institution_ticket
@@ -10,7 +9,6 @@ module Api
             def show
                 render json: @institution_each
             end
-            #Cadastrar um novo aluno
             def create
                 @institutuin_create = Institution.new(institution_params)
                 if @institutuin_create.save
@@ -19,7 +17,6 @@ module Api
                     render json: @institutuin_create.errors, status: 422
                 end
             end
-            #Altera uma informação no cadastro
             def update
                 if @institution_each.update(institution_params)
                     render json: @institution_each
@@ -27,7 +24,6 @@ module Api
                     render json: @institution_each.errors, status: 422
                 end
             end
-            #Excluir um aluno
             def destroy
                 @institution_each.destroy
             end

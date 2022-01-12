@@ -4,8 +4,6 @@ class Registration < ApplicationRecord
     belongs_to :institution
     has_many :ticket
 
-    after_create :create_tickets
-
     validates :amount, presence: true
     validates :amount, numericality: {greater_than: 0} 
 
@@ -17,11 +15,4 @@ class Registration < ApplicationRecord
 
     validates :course, presence: true
 
-    def create_tickets
-        @c_ticket = Ticket.new
-    end
-
-    private
-
-    
 end
