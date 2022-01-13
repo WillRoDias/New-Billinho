@@ -12,9 +12,9 @@ class Student < ApplicationRecord
 
     validates :gender, presence: true
     validates :gender, inclusion: { in: %w(M F)}
-    validates :gender, confirmation: { case_sensitive: false}
+    # validates :gender, confirmation: { case_sensitive: false}
 
     validates :payment, presence: true
     validates :payment, inclusion: { in: %w(Boleto Cartao)}
-    validates :payment, confirmation: { case_sensitive: false}
+    # validates :payment, confirmation: { case_sensitive: false}
 end
