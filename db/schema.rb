@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_01_11_140700) do
     t.integer "institution_id", null: false
     t.float "amount", null: false
     t.integer "quantity_ticket", null: false
-    t.integer "due_date", null: false
+    t.date "due_date", null: false
     t.string "course", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

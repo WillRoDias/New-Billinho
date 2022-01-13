@@ -4,13 +4,11 @@ class Institution < ApplicationRecord
 
     #Validations
     validates :name, presence: true
-    # validates :name, uniquiness: true
 
     validates :cnpj, presence: true
     validates :cnpj, numericality: true
     validates :cnpj, length: {maximum: 14}
-    # validates :cnpj, uniquiness: true
     
     validates :i_type, inclusion: { in: %w(Universidade Escola Creche)}
-    # validates :i_type, confirmation: { case_sensitive: false}
+    # validates :i_type, presence: true
 end

@@ -2,6 +2,7 @@ class Ticket < ApplicationRecord
 
     belongs_to :registration
 
+    #Validations
     validates :t_amount, presence: true
 
     validates :t_due_date, presence: true
