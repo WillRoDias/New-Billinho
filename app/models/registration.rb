@@ -10,11 +10,11 @@ class Registration < ApplicationRecord
   after_create :new_ticket
 
   # Validations
-  validates :amount, presence: true
-  validates :amount, numericality: { greater_than: 0 }
+  validates :amount, presence: true,
+                     numericality: { greater_than: 0 }
 
-  validates :quantity_ticket, presence: true
-  validates :quantity_ticket, numericality: { greater_than_or_equal_to: 1 }
+  validates :quantity_ticket, presence: true,
+                              numericality: { greater_than_or_equal_to: 1 }
 
   validates :due_date, presence: true
   # validates :due_date, numericality: {greater_than_or_equal_to: 1, less_than_or_equal_to: 28}
@@ -30,16 +30,16 @@ class Registration < ApplicationRecord
     date_aux = 1
 
     if due_date < Date.today
-      @private_t_due_date = Date.today + 1.months
+      @private_t_due_date = due_date + 1.months
       date_aux += 1
     else
-      @private_t_due_date = Date.today
+      @private_t_due_date = due_date
     end
 
     quantity_ticket.times do
       Ticket.create(registration_id: id, t_amount: tickets_amount, t_due_date: @private_t_due_date,
                     t_status: 'Aberta')
-      @private_t_due_date = Date.today + date_aux.months
+      @private_t_due_date = due_date + date_aux.months
       date_aux += 1
     end
   end

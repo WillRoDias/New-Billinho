@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Create the model and validate some colums as the document require to ensure that the data will be add correctly
+
 class CreateTickets < ActiveRecord::Migration[6.1]
   def change
     create_table :tickets do |t|

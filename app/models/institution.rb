@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
+# Associations and validations of the datas
 class Institution < ApplicationRecord
+  # Associations
   has_many :institutions
 
   # Validations
   validates :name, presence: true
 
-  validates :cnpj, presence: true
-  validates :cnpj, numericality: true
-  validates :cnpj, length: { maximum: 14 }
+  validates :cnpj, presence: true,
+                   numericality: true,
+                   length: { maximum: 14 }
 
-  validates :i_type, inclusion: { in: %w[Universidade Escola Creche] }
-  validates :i_type, presence: true # The document don't require this validation
+  validates :i_type, inclusion: { in: %w[Universidade Escola Creche] },
+                     presence: true # The document don't require this validation
 end
