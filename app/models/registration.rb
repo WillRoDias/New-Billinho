@@ -26,10 +26,13 @@ class Registration < ApplicationRecord
     amount / quantity_ticket
   end
 
+  # Create the tickets from the registrations and calculate the due date of each ticket based
+  # In the day that te registrations was created and the day that the student selected to be
+  # The day of the due date
   def new_ticket
     date_aux = 1
 
-    if due_date < Date.today
+    if due_date <= Date.today
       @private_t_due_date = due_date + 1.months
       date_aux += 1
     else
