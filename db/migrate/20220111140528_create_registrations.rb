@@ -7,7 +7,7 @@ class CreateRegistrations < ActiveRecord::Migration[6.1]
     create_table :registrations do |t|
       t.references :student, null: false, foreign_key: true
       t.references :institution, null: false, foreign_key: true
-      t.float :amount, null: false, precision: 2
+      t.float :amount, null: false
       t.integer :quantity_ticket, null: false
       t.date :due_date, null: false
       t.string :course, null: false
