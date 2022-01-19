@@ -9,7 +9,7 @@ class CreateRegistrations < ActiveRecord::Migration[6.1]
       t.references :institution, null: false, foreign_key: true
       t.float :amount, null: false
       t.integer :quantity_ticket, null: false
-      t.date :due_date, null: false
+      t.integer :due_day, null: false
       t.string :course, null: false
 
       t.timestamps

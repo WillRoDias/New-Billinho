@@ -51,7 +51,7 @@ module Api
 
       def registration_params
         params.require(:registration).permit(:institution_id, :student_id, :amount, :quantity_ticket,
-                                             :due_date, :course)
+                                             :due_day, :course)
       end
     end
   end
