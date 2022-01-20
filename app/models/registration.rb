@@ -22,7 +22,7 @@ class Registration < ApplicationRecord
 
   # Calculates the value of each ticket based in the value of the course
   def tickets_amount
-    number_with_precision(amount / quantity_ticket, precision: 2)
+    amount / quantity_ticket
   end
 
   # Create the tickets from the registrations and calculate the due date of each ticket based
