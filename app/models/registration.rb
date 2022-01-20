@@ -5,7 +5,7 @@ class Registration < ApplicationRecord
   # Associations
   belongs_to :student
   belongs_to :institution
-  has_many :ticket dependent: :destroy
+  has_many :ticket, dependent: :destroy
 
   after_create :new_ticket
 
