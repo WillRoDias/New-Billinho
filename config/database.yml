@@ -3,7 +3,7 @@ default: &default
   host: db
   adapter: postgresql
   encoding: unicode
-  username: psql
+  username: postgres
   password: 'postgres'
 development:
   <<: *default

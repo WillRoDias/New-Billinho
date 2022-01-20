@@ -5,7 +5,7 @@ services:
     container_name: postgres-container
     environment:
       POSTGRES_DB: 'New_Billinho-db'
-      POSTGRES_USER: 'psql'
+      POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: 'postgres'
     ports:
       - '5432'
@@ -18,7 +18,7 @@ services:
     image: dpage/pgadmin4
     container_name: 'pgadmin-container'
     environment:
-      PGADMIN_DEFAULT_EMAIL: 'william.dias@redealumni.com'
+      PGADMIN_DEFAULT_EMAIL: 'willrodias@redealumni.com'
       PGADMIN_DEFAULT_PASSWORD: 'postgres'
     ports:
       - '15432:80'
