@@ -2,7 +2,6 @@
 
 # Associations and validations of the datas
 class Student < ApplicationRecord
-  before_create :cpf_format
   # Associations
   has_many :registrations
 
