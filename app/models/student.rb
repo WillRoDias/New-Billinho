@@ -2,7 +2,6 @@
 
 # Associations and validations of the datas
 class Student < ApplicationRecord
-
   before_create :cpf_format
   # Associations
   has_many :registrations
@@ -19,5 +18,4 @@ class Student < ApplicationRecord
   validates :payment, presence: true,
                       inclusion: { in: %w[Boleto Cartao] }
   # validates :payment, confirmation: { case_sensitive: false}
-
 end
