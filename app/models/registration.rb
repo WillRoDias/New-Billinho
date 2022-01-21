@@ -2,6 +2,9 @@
 
 # Associations and validations of the datas
 class Registration < ApplicationRecord
+  # Inclusions
+  include ActionView::Helpers::NumberHelper # Helper to deal with numbers
+
   # Associations
   belongs_to :student
   belongs_to :institution
@@ -20,9 +23,9 @@ class Registration < ApplicationRecord
 
   validates :course, presence: true
 
-  # Calculates the value of each ticket based in the value of the course
+  # Calculates the value of each ticket based in the value of the course and format the precision of the value
   def tickets_amount
-    amount / quantity_ticket
+    number_with_precision(amount / quantity_ticket, precision: 2)
   end
 
   # Create the tickets from the registrations and calculate the due date of each ticket based
