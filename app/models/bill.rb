@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 # Associations and validations of the datas
-class Ticket < ApplicationRecord
+class Bill < ApplicationRecord
   # Associations
-  belongs_to :registration
+  belongs_to :enrollment
 
   # Validations
   validates :t_amount, presence: true

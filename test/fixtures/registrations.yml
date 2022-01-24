@@ -2,12 +2,12 @@
 
 one:
   amount: 1.5
-  tickets: 1
+  bills: 1
   due_date: 1
   course: MyString
 
 two:
   amount: 1.5
-  tickets: 1
+  bills: 1
   due_date: 1
   course: MyString

@@ -3,7 +3,7 @@
 # Associations and validations of the datas
 class Student < ApplicationRecord
   # Associations
-  has_many :registrations
+  has_many :enrollments
 
   # Validations
   validates :name, presence: true

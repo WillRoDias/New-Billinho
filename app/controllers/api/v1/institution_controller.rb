@@ -10,8 +10,8 @@ module Api
       # to access the data from the function "set_institution"
       before_action :set_institution, only: %i[show destroy update]
       def index
-        @institution_ticket = Institution.all
-        render json: @institution_ticket
+        @institution_bill = Institution.all
+        render json: @institution_bill
       end
 
       def show
