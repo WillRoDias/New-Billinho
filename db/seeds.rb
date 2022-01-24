@@ -18,8 +18,8 @@ Institution.create(name: 'Cultural', cnpj: '23532547000156', i_type: 'Creche')
 Institution.create(name: 'UNIP', cnpj: '55324645000157', i_type: 'Universidade')
 Institution.create(name: 'Universal', cnpj: '12523646000267', i_type: 'Escola')
 
-Registration.create(student_id: 1, institution_id: 1, amount: 7200, quantity_bill: 6, due_day: 30, course: 'Engenharia')
-Registration.create(student_id: 2, institution_id: 3, amount: 5200, quantity_bill: 6, due_day: 28, course: 'Enfermagem')
-Registration.create(student_id: 3, institution_id: 4, amount: 15_200, quantity_bill: 6, due_day: 10, course: 'Medicina')
-Registration.create(student_id: 4, institution_id: 2, amount: 7200, quantity_bill: 6, due_day: 12,
+Enrollment.create(student_id: 1, institution_id: 1, amount: 7200, quantity_bill: 6, due_day: 30, course: 'Engenharia')
+Enrollment.create(student_id: 2, institution_id: 3, amount: 5200, quantity_bill: 6, due_day: 28, course: 'Enfermagem')
+Enrollment.create(student_id: 3, institution_id: 4, amount: 15_200, quantity_bill: 6, due_day: 10, course: 'Medicina')
+Enrollment.create(student_id: 4, institution_id: 2, amount: 7200, quantity_bill: 6, due_day: 12,
                     course: 'Ensino Fundamental')
